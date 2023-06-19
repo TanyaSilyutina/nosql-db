@@ -57,6 +57,10 @@ const thoughtSchema = new mongoose.Schema(
     }
 )
 
-const Thought = mongoose.model('Thought', thoughtSchema);
+thoughtSchema.virtual('reactionCount').get(function() {
+    return this.reactions.length;
+});
+
+const Thought = mongoose.model('Thought', thoughtSchema)
 
 module.exports = Thought;
