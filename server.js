@@ -18,7 +18,7 @@ mongoose.connection.on('error', (err) =>
     console.log(`MongoDB connection error: ${err}`)
 );
 
-// app.use(routes);
+app.use(routes);
 
 app.listen(PORT, () => {
     console.log((`Connected to port: ${PORT}`))
